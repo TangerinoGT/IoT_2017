@@ -3,3 +3,4 @@ Projeto final do curso IoT realizado no IFSP Piracicaba em 2017
 
 Projeto: DOMÓTICA
 testando alterações no git
+verificação de onde ficam os arquivos anterioes
