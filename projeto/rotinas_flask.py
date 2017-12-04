@@ -24,7 +24,7 @@ def atuadores():
 
 @app.route('/graficos')
 def graficos():
-    valores = db_sqlite.retorna_dados_sensores()
+    valores = db_sqlite.db_retorna_dados_domotica()
     return render_template('graficos.html', valores=valores)
     return render_template('graficos.html')
 
