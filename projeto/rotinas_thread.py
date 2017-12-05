@@ -19,7 +19,7 @@ class thread_temperatura(threading.Thread):
         print 'Iniciando Thread ', self.tipo_sensor
         while self.executando:
             temperatura = get_temp()
-            db_adiciona_dado_domotica('Temperatura', temperatura, 'Celsius')
+            db_adiciona_dado_domotica(self.tipo_sensor, temperatura, 'Celsius')
             print self.tipo_sensor, self.executando, str(temperatura)
             time.sleep(1.0/self.frequencia)
 
@@ -40,7 +40,7 @@ class thread_potenciometro(threading.Thread):
         print 'Iniciando Thread: ', self.tipo_sensor
         while self.executando:
             _,valor = get_pot()
-            db_adiciona_dado_domotica('Potenciometro', valor, '0-1023')
+            db_adiciona_dado_domotica(self.tipo_sensor, valor, '0-1023')
             print self.tipo_sensor, str(valor)
             time.sleep(1.0/self.frequencia)
 

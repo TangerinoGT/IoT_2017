@@ -36,11 +36,13 @@ def escreve_lcd_cor(texto_linha1, texto_linha2, cor):
     tela.write(texto_linha2)
     # escala RGB
     if cor == 'vermelho':
-        tela.setColor(255, 100, 100)
+        tela.setColor(255, 10, 10)
     elif cor == 'verde':
-        tela.setColor(100, 255, 100)
+        tela.setColor(10, 255, 100)
     elif cor == 'azul':
-        tela.setColor(100, 100, 255)
+        tela.setColor(10, 100, 255)
+    elif cor == 'cinza':
+        tela.setColor(10, 10, 10)
     else:
         tela.setColor(0, 0, 0)
     # colocar alguma ação de erro quando escreverem a cor errada

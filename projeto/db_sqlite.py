@@ -19,6 +19,12 @@ def db_cria_tabela_domotica():
     except Exception as e:
         print 'except - db_cria_tabela_domotica', e
 
+def db_retorna_dados_by_collum(nomeColuna):
+    conect = sqlite3.connect('site.db')
+    cursor = conect.cursor()
+    cursor.execute(' SELECT * FROM domotica WHERE tipo_sensor = ' + "'" + nomeColuna + "'")
+    return cursor.fetchall()
+
 def db_retorna_dados_domotica(quantidade=None):
     conect = sqlite3.connect('site.db')
     cursor = conect.cursor()

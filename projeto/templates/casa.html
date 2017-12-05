@@ -166,12 +166,32 @@
 
 <script>
     $("#bt1_on").click(function(){
-        $.get( "/led/1", function( data ) {
+        $.get( "/led_vm/1", function( data ) {
             console.log( "Load was performed." );
         });
     })
     $("#bt1_off").click(function(){
-        $.get( "/led/0", function( data ) {
+        $.get( "/led_vm/0", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt2_on").click(function(){
+        $.get( "/led_az/1", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt2_off").click(function(){
+        $.get( "/led_az/0", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt3_on").click(function(){
+        $.get( "/led_vd/1", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt3_off").click(function(){
+        $.get( "/led_vd/0", function( data ) {
             console.log( "Load was performed." );
         });
     })

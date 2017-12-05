@@ -14,10 +14,14 @@ Highcharts.chart('container-grafico1', {
     },
     xAxis: {
         type: 'datetime'
+        // type: 'datetime',
+        // dateTimeLabelFormats: { // don't display the dummy year
+        //     month: '%e. %b',
+        //     year: '%b'}
     },
     yAxis: {
         title: {
-            text: 'Temperatura e Umidade'
+            text: 'Leitura de sensores'
         }
     },
     legend: {
@@ -30,19 +34,30 @@ Highcharts.chart('container-grafico1', {
             pointStart: 0
         }
     },
-    series: [{
-        name: 'temperatura',
-        data: [
-            {% for i in valores %}
-                {{i[1]|safe}} ,
-            {% endfor %}
-        ]
-    }, {name: 'umidade',
-    data:[
-        {% for i in valores %}
-            {{i[2]|safe}} ,
-        {% endfor %}
-    ]}]
+
+    // plotOptions: {
+    //     spline: {
+    //         marker: {
+    //             enabled: true
+    //         }
+    //     }
+    // },
+
+
+    series: [
+    {name: 'Potenciometro',
+      data: [
+          {% for i in valores_pot %}
+              {{i[2]|safe}} ,
+          {% endfor %} ]
+      }
+      ,{name: 'Temperatura',
+      data:[
+          {% for i in valores_temp %}
+              {{i[2]|safe}} ,
+          {% endfor %} ]
+      }
+    ]
 });
 </script>
 
